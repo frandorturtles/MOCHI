@@ -1,0 +1,17 @@
+# Compilacion firmware
+.pio/
+.vscode/
+# Pruebas en PC
+tests/test_core
+tests/ui_snapshot
+tests/snap_raw/
+__pycache__/
+*.pyc
+# KiCad
+*-backups/
+*.kicad_prl
+fp-info-cache
+_autosave-*
+# OpenSCAD / sistema
+*.scad.bak
+.DS_Store
