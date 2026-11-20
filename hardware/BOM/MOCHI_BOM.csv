@@ -1,0 +1,20 @@
+Ref,Qty,Componente,Especificacion,Ejemplo / busqueda,Alternativas,Notas,Precio_unit_USD_estimado
+MCU,1,ESP32-C3 SuperMini,Placa 22.5x18 mm con USB-C y LDO 3.3 V,"Busca ""ESP32-C3 SuperMini""",ESP32-C3-DevKitM-1 (mas grande: no cabe),Usa IO0-IO7 IO10 IO20 IO21. Quitar el LED de alimentacion si se quiere menos consumo,3.0
+TP,1,Modulo cargador TP4056 con proteccion,"DW01 + FS8205, salidas B+/B-/OUT+/OUT-","Busca ""TP4056 con proteccion"" (micro-USB o USB-C)",Modulo MCP73831 (cambiar el cableado de potencia),CAMBIAR R_PROG a 10k (ver docs/assembly/assembly.md),1.0
+BAT,1,LiPo 3.7 V ~300 mAh,~4.0x25x40 mm (402540),"Busca ""LiPo 402540 3.7V""",403035 / 503035 (ver params.scad),Verificar polaridad del conector,4.5
+LCD,1,Pantalla redonda GC9A01 1.28 in,Modulo SPI 240x240 de 7-8 pines,"Waveshare 1.28inch LCD Module o equivalente GC9A01",-,Diametro de placa ~37.5 mm PROVISIONAL,7.0
+BZ,1,Buzzer pasivo,"3-5 V, ~8.5 mm de diametro, <=5 mm de alto","Busca ""passive buzzer 8.5mm""",Buzzer piezo pasivo (quitar D2/Q1 y excitar directo),Debe ser PASIVO (no ACTIVO) para generar melodias,0.5
+SW1-SW3,3,Pulsador tact 6x6 mm,Patas (THT) altura 5 mm,"Tact switch 6x6x5",Cualquier tact de 6x6 mm; altura <=5.5 mm,Los pulsan los vastagos de las estrellas,0.1
+D1,1,Diodo Schottky 1N5819,"1 A, 40 V, DO-41",1N5819,SS14 (SMD); 1N5817,Une bateria -> 5V del SuperMini (K hacia 5V),0.1
+D2,1,Diodo 1N4148,Senal,1N4148,1N4007,Flyback del buzzer,0.05
+Q1,1,Transistor NPN,"TO-92 (BC547, 2N2222, S8050)",BC547,2N3904,Excita el buzzer,0.1
+R1,1,100 ohm 1/4 W,,-,-,Serie de BL (omitir si la pantalla no tiene BL),0.02
+R2,1,1k 1/4 W,,-,-,Base de Q1,0.02
+R3-R4,2,100k 1/4 W,,-,-,Divisor de VBAT,0.02
+C1,1,100 nF ceramico,,-,-,Opcional: filtro ADC,0.05
+R_PROG,1,Resistencia 10k (SMD 0603/0805),,-,"12k (100 mA) / 8.2k (150 mA)",Reemplaza la R de 1.2k del TP4056. Limita la carga a ~120 mA,0.02
+PLATE,1,Perfboard 5x7 cm (recortar a 44x50) o impresion 3D,,-,Alambre y cinta doble cara sin placa,Soporte de los modulos,0.5
+WIRE,1,Cable esmaltado/silicona 28-30 AWG (~1 m),,-,-,Soldadura punto a punto,0.5
+PRINT,1,Filamento PETG/PLA (~25 g),,-,-,Base + tapa + 3 botones,0.6
+SCREW,3,Tornillo M2x16 autorroscante,Cabeza ~3.8 mm,-,M2x14 + ajustar parametros,,0.05
+FOAM,1,Cinta doble cara 0.5 mm / espuma,,-,-,Fija la pantalla bajo el techo y la bateria,0.1
